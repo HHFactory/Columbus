@@ -20,7 +20,7 @@ class Item < ActiveRecord::Base
         if keyword.present?
           multi_match {
             query keyword
-            fields %w{ characteristic pick_location pick_date}
+            fields %w{ characteristic }
           }
         else
           match_all

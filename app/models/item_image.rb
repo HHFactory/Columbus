@@ -1,4 +1,5 @@
 # entity of itemImage
+require ''
 class ItemImage < ActiveRecord::Base
-  attr_accessor :url_path
+  mount_uploader :url_path, ImagesUploader
 end

@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
   # items controller
-  post '/v1/items',     to: 'items#create'
-  get '/v1/items',      to: 'items#search'
-  put '/v1/items/:id',  to: 'items#update'
+  scope '/v1/items' do
+    post '',       to: 'items#create'
+    get '',        to: 'items#search'
+    put '/:id',    to: 'items#update'
+    delete '/:id', to: 'items#delete'
+  end
+
+  scope '/v1/item/images' do
+    post '', to: 'item_images#create'
+  end
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

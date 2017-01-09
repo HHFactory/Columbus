@@ -2,6 +2,7 @@
 
 class ItemsController < ApplicationController
   protect_from_forgery except: [:create]
+  include ItemsHelper
 
   # insert Item data to DB
   # post /v1/items/
@@ -31,14 +32,24 @@ class ItemsController < ApplicationController
   def update
     item = Item.find_by(id: params[:id]) if params[:id]
     if item.nil?
-      render: nothing => true, :status => 404 and return
+      render :nothing => true, :status => 404 and return
     else
       item.update(post_params)
-      render: nothing => true, :status => 200
+      render :nothing => true, :status => 200
     end
   end
 
-  def post_params
-    params.require(:item).permit(:pick_date, :characteristic, :pick_location, :manage_location)
+  # delete item entity
+  # delete /v1/items/:id
+  # @param[String] item id
+  def delete
+    item = Item.find_by(id: params[:id]) if params[:id]
+    if item.nil?
+      render :nothing => true, :status => 404 and return
+    else
+      item.destroy
+      render :nothing => true, :status => 204
+    end
   end
+
 end
