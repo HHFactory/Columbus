@@ -7,8 +7,9 @@ class Item < ActiveRecord::Base
   include Elasticsearch::Model
   has_many :item_images
 
-  index_name 'items'
-  document_type 'ja'
+
+  index_name 'columbus'
+  document_type 'items'
 
   # search by elasticsearch
   # @param[String] q :search word

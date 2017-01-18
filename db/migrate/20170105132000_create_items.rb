@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :pick_location, null:false
       t.string :manage_location, null:false
       t.timestamps null:false
-      t.references :item_image
+      # t.references :item_image
     end
   end
 end

@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170105143103) do
     t.string   "division",   limit: 255, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "item_id",    limit: 4
   end
 
   create_table "item_user_links", force: :cascade do |t|
@@ -43,7 +44,6 @@ ActiveRecord::Schema.define(version: 20170105143103) do
     t.string   "manage_location", limit: 255, null: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.integer  "item_image_id",   limit: 4
   end
 
   create_table "users", force: :cascade do |t|

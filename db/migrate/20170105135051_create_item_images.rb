@@ -4,6 +4,7 @@ class CreateItemImages < ActiveRecord::Migration
       t.string :url_path, null:false
       t.string :division, null:false
       t.timestamps null: false
+      t.belongs_to :item
     end
 
     create_table :item_user_links do |t|

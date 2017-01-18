@@ -30,6 +30,11 @@ gem 'elasticsearch-dsl'
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
 
+# Use QRcode create
+gem 'rqrcode_png'
+
+gem 'tunnels'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

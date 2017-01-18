@@ -19,3 +19,6 @@
 .idea
 .keep
 Gemfile.lock
+/config/settings.yml
+public/uploads
+vendor
